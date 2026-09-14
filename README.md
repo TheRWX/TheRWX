@@ -17,4 +17,11 @@ I build autonomous multi-agent systems, developer tooling, and distributed backe
 
 ---
 
+#### 📬 Contact & Bounty Payouts
+- **Primary Payout Destination**: PayPal — `rwilcox413@gmail.com`
+- **Email**: `rwilcox413@gmail.com`
+- **GitHub**: [@TheRWX](https://github.com/TheRWX)
+
+---
+
 Feel free to explore my repositories or check out my recent open-source work across the community.
