@@ -8,6 +8,8 @@
 [![Pydantic](https://img.shields.io/badge/Schema-Pydantic%20v2-E92063?style=flat&logo=pydantic&logoColor=white)](https://docs.pydantic.dev)
 [![Testing](https://img.shields.io/badge/Quality-Hermetic%20Pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)](https://pytest.org)
 [![Linux](https://img.shields.io/badge/Platform-Linux%20%2F%20Unix-FCC624?style=flat&logo=linux&logoColor=black)](https://kernel.org)
+[![PayPal](https://img.shields.io/badge/Payout-PayPal-00457C?style=flat&logo=paypal&logoColor=white)](mailto:rwilcox413@gmail.com)
+[![Algora Stripe](https://img.shields.io/badge/Escrow-Algora%20Stripe-635BFF?style=flat&logo=stripe&logoColor=white)](https://algora.io)
 
 ---
 
@@ -49,9 +51,22 @@ Whether tracing concurrent agent graphs with OpenTelemetry, eliminating edge-cas
 
 ---
 
-### 📬 Contact & Bounty Payouts
+### 💳 Verified Payment Methods & Bounty Payouts
+
+All open-source contributions, bounty solutions, and technical advisory payouts are processed through verified payment rails:
+
+[![PayPal](https://img.shields.io/badge/PayPal-rwilcox413%40gmail.com-00457C?style=for-the-badge&logo=paypal&logoColor=white)](mailto:rwilcox413@gmail.com)
+[![Stripe Connect](https://img.shields.io/badge/Stripe%20Connect-Algora%20Verified-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://algora.io)
+
+| Payout Rail | Destination / Account | Use Cases & Supported Flows | Status |
+|:---|:---|:---|:---:|
+| **PayPal** | [`rwilcox413@gmail.com`](mailto:rwilcox413@gmail.com) | Direct PR Bounties, BasedHardware, Swarms Silver Tier, Direct Grants | **Active & Verified** |
+| **Stripe Connect** | Connected via [`@TheRWX`](https://github.com/TheRWX) on Algora | Algora Escrow Bounties, Automated Platform Disbursals | **Connected & Verified** |
+
+---
+
+### 📬 Contact & Availability
 
 - **GitHub**: [@TheRWX](https://github.com/TheRWX)
 - **Email**: [`rwilcox413@gmail.com`](mailto:rwilcox413@gmail.com)
-- **Primary Payout Destination**: PayPal — `rwilcox413@gmail.com`
-- **Location & Timezone**: US / Mountain (UTC-6)
+- **Timezone**: US / Mountain (UTC-6)
