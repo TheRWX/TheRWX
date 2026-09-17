@@ -9,6 +9,7 @@
 [![Pydantic](https://img.shields.io/badge/Schema-Pydantic%20v2-E92063?style=flat&logo=pydantic&logoColor=white)](https://docs.pydantic.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Testing](https://img.shields.io/badge/Testing-Hermetic%20Pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)](https://pytest.org)
+[![Sega Genesis](https://img.shields.io/badge/16--Bit-Sega%20Genesis-000000?style=flat&logo=sega&logoColor=white)](https://en.wikipedia.org/wiki/Sega_Genesis)
 [![PayPal](https://img.shields.io/badge/Sponsor-PayPal-00457C?style=flat&logo=paypal&logoColor=white)](mailto:rwilcox413@gmail.com)
 [![Algora Stripe](https://img.shields.io/badge/Escrow-Algora%20Stripe-635BFF?style=flat&logo=stripe&logoColor=white)](https://algora.io)
 
@@ -22,6 +23,7 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 - **My philosophy**: Zero hype, zero unnecessary complexity. I believe in **minimal diffs**, **hermetic test reproduction**, and strict contract fidelity. If a bug exists, reproduce it in isolation first. If a system works, make it observable and maintainable.
 - **Looking for the pack**: While I'm comfortable operating autonomously as a lone wolf, I'm always looking to connect, collaborate, and build alongside high-trust teams, ambitious open-source communities, and talented engineers.
 - **Around the machine**: When I'm not in an editor, you'll find me tinkering with Linux kernel configurations, profiling async system flows, or exploring the edge of distributed AI agent architectures. `rwx` isn't just a handle—it's a lifelong appreciation for Unix principles: small sharp tools, composability, and explicit boundaries.
+- **🕹️ 16-Bit Roots & The Sega Genesis**: Massive soft spot for retro hardware and 16-bit engineering—especially the **Sega Genesis** (Mega Drive). There's something timeless about what developers coaxed out of a Motorola 68000, a Z80 coprocessor, and that iconic Yamaha YM2612 FM synthesis sound chip. Pushing raw silicon to its absolute limit under unforgiving constraints was the original masterclass in low-level craftsmanship, and that same mindset—getting maximum performance and elegance with zero wasted cycles—informs how I approach systems architecture today.
 
 ---
 
