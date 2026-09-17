@@ -1,4 +1,4 @@
-# Hey, I'm Ryan / rwx (`@TheRWX`) 👋
+# Hey, I'm Reed / rwx (`@TheRWX`) 👋
 
 **Systems Engineer • Open-Source Contributor • Linux Enthusiast**  
 *Building resilient multi-agent runtimes, distributed observability, and hardened developer tooling.*
