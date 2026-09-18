@@ -9,6 +9,7 @@
 [![Pydantic](https://img.shields.io/badge/Schema-Pydantic%20v2-E92063?style=flat&logo=pydantic&logoColor=white)](https://docs.pydantic.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Testing](https://img.shields.io/badge/Testing-Hermetic%20Pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)](https://pytest.org)
+[![CLA](https://img.shields.io/badge/CLA-Signed%20%26%20Compliant-2ea44f?style=flat&logo=github&logoColor=white)](https://cla-assistant.io)
 [![Sega Genesis](https://img.shields.io/badge/16--Bit-Sega%20Genesis-000000?style=flat&logo=sega&logoColor=white)](https://en.wikipedia.org/wiki/Sega_Genesis)
 [![PayPal](https://img.shields.io/badge/Sponsor-PayPal-00457C?style=flat&logo=paypal&logoColor=white)](mailto:rwilcox413@gmail.com)
 [![Algora Stripe](https://img.shields.io/badge/Escrow-Algora%20Stripe-635BFF?style=flat&logo=stripe&logoColor=white)](https://algora.io)
@@ -60,6 +61,7 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 - **Hermetic Testing**: Deterministic regression suites (`pytest`, `python3 -S`), zero-network mock harnesses
 - **Security & Disclosure**: Coordinated disclosure (GHSA / PVR), CVSS scoring calibration, benign non-destructive PoCs
 - **Static Analysis & Tooling**: AST inspection, Black, Ruff, Flake8, MyPy, pre-commit hooks
+- **Governance & Licensing**: 100% Contributor License Agreement (CLA) compliant (signed & verified via CLA Assistant), adhering strictly to upstream open-source licensing (Apache 2.0 / MIT) and corporate IP hygiene
 
 #### 🚀 DevOps, CI/CD & Linux
 - **Automation & CI/CD**: GitHub Actions (least-privilege permissions, commit SHA pinning, matrix workflows)
@@ -71,6 +73,7 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 
 ### 🏆 Open-Source Track Record & Highlights
 
+- **[`BerriAI/litellm`](https://github.com/BerriAI/litellm)**: Engineered pre-persistence validation guards preventing unroutable and pricing-only deployments from corrupting proxy state, validated complexity routing credentials, and authored hermetic regression suites across proxy management endpoints.
 - **[`kyegomez/swarms`](https://github.com/kyegomez/swarms)**: Landed OpenTelemetry distributed tracing across 12+ multi-agent swarm topologies (`AdvisorSwarm`, `SwarmRearrange`, `AuctionSwarm`, `OneToOne`, `OneToThree`, `Broadcast`, `AutoAgentBuilder`, `HybridClusterSwarm`), and fixed multi-turn debate transcript continuity.
 - **[`BasedHardware/omi`](https://github.com/BasedHardware/omi)**: Hardened enterprise services (Microsoft 365, Zapier, Notion OAuth, ClickUp, USGS Feeds) with custom ASGI exception handlers, typed request/response schemas, and comprehensive hermetic test suites with 100% manifest check pass rates.
 - **Developer Onboarding**: Authored idiomatic developer quickstarts across 20+ language ecosystems.
@@ -83,11 +86,13 @@ All open-source contributions, bounties, and technical contracts are serviced th
 
 [![PayPal](https://img.shields.io/badge/PayPal-rwilcox413%40gmail.com-00457C?style=for-the-badge&logo=paypal&logoColor=white)](mailto:rwilcox413@gmail.com)
 [![Stripe Connect](https://img.shields.io/badge/Stripe%20Connect-Algora%20Verified-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://algora.io)
+[![CLA Compliant](https://img.shields.io/badge/CLA-Signed%20%26%20Compliant-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://cla-assistant.io)
 
-| Payout Method | Destination / Handle | Details | Status |
+| Payout & Trust Rails | Destination / Handle | Details | Status |
 |:---|:---|:---|:---:|
 | **PayPal** | [`rwilcox413@gmail.com`](mailto:rwilcox413@gmail.com) | Direct PR bounties, project grants, independent consulting | **Primary & Verified** |
 | **Stripe Connect** | Connected via [`@TheRWX`](https://github.com/TheRWX) on Algora | Algora escrow payouts & platform disbursals | **Connected & Verified** |
+| **Contributor CLA** | Verified via CLA Assistant | Contributor License Agreement signed across upstream repositories (LiteLLM / Linux / Apache 2.0) | **Signed & Compliant** |
 
 ---
 
