@@ -32,11 +32,10 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 
 ### 🔭 What I'm Focused On
 
-- **Autonomous Agent Swarms & Topologies**: Designing resilient multi-agent runtimes, conversational turn integrity, deferred tool budgeting, and concurrent task routing protocols (active contributor to [`kyegomez/swarms`](https://github.com/kyegomez/swarms)).
-- **Distributed Observability & Telemetry**: Architecting OpenTelemetry (OTel) instrumentation across distributed agent execution graphs, custom span processing, and latency attribution.
-- **High-Throughput LLM Proxies & Gateway Validation**: Engineering pre-persistence validation guards and credential routing defenses for large-scale model routers (contributor to [`BerriAI/litellm`](https://github.com/BerriAI/litellm)).
-- **Ecosystem & API Hardening**: Engineering defensive cloud integrations (OAuth2/OIDC, Microsoft 365, Notion, Zapier, ClickUp, USGS Feeds) with custom ASGI exception middleware and strict schema validation on [`BasedHardware/omi`](https://github.com/BasedHardware/omi).
-- **CI/CD Hardening & Vulnerability Disclosure**: Securing GitHub Actions workflows with least privilege and SHA pinning, enforcing fail-closed preflight gates, and conducting coordinated vulnerability disclosure via GHSA/PVR.
+- **High-Throughput LLM Proxies & Gateway Validation**: Engineering pre-persistence validation guards, model router defenses, and credential routing integrity for production model gateways (contributor to [`BerriAI/litellm`](https://github.com/BerriAI/litellm)).
+- **Multi-Modal Chat Tools & Service Hardening**: Architecting resilient platform link syntax extraction (`<#ID|name>`, `<@USER>`), shared-secret chat auth enforcement, callable ASGI exception handlers, and defensive schema models on [`BasedHardware/omi`](https://github.com/BasedHardware/omi).
+- **Autonomous Agent Architectures & Distributed Observability**: Designing resilient multi-agent runtimes, conversational turn integrity, deferred tool budgeting, and OpenTelemetry (OTel) instrumentation across distributed execution graphs.
+- **Fail-Closed CI/CD Hardening & Vulnerability Disclosure**: Securing GitHub Actions workflows with least privilege and commit SHA pinning, enforcing fail-closed preflight gates, and conducting coordinated vulnerability disclosure via GHSA/PVR.
 
 ---
 
@@ -45,12 +44,15 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 I design and ship code according to strict, formal engineering invariants:
 
 1. **Validate-Before-Write Ordering**: Database persistence operations in asynchronous services and proxies must strictly execute *after* all semantic, provider, and schema validations succeed—preventing orphaned records and persistent database corruption on downstream failure.
-2. **Dual-Tier Hermetic Testing**: Every service and plugin is verified across two distinct execution tiers:
+2. **Authorize-Before-Secret-Resolution**: Pydantic request models and early route parsers validate structural schemas only. Resolving server-level credentials, environment secrets, or external secret managers must never occur before route authentication and authorization are verified, preventing timing oracles and unmetered I/O.
+3. **Callable ASGI Exception Handlers**: Exception handlers in FastAPI/Starlette must return a concrete callable `Response` / `JSONResponse`, never a bare Pydantic model (which triggers runtime `TypeError: object is not callable` during ASGI middleware dispatch).
+4. **Dual-Tier Hermetic Testing**: Every service and integration is verified across two distinct execution tiers:
    - *Tier 1 (Pure Stdlib)*: Executed under standard Python (`python3 -S`) with controlled mocks to guarantee zero implicit dependency leaks in minimal runtimes.
    - *Tier 2 (Full Dependency Runtime)*: Executed under pinned virtual environments via `uv` (`uv run --locked pytest`) to prove real framework lifecycles, Pydantic v1/v2 schema validators, and ASGI dispatchers run without method collision.
-3. **Fail-Closed AST Static Analysis**: Utilizing AST-level inspection to audit error handling in deserialization and extraction helpers—eliminating unconstrained catch blocks (`except Exception:`) that mask internal bugs as client errors.
-4. **Stateful Property Fuzzing**: Applying bounded Hypothesis strategies to parser and state machine boundaries, synthesizing adversarial inputs to expose edge-case crashes and shrinking them into deterministic regression suites.
-5. **Scope Subordination over Anti-Conflict Isolation**: Strict deliverable fidelity. Anti-conflict heuristics never drop required deliverables (manifest entries, discovery links, documentation) mandated by maintainer contracts; shared index rebases are cleanly resolved rather than truncating scope.
+5. **Dual-Shape Duck-Typing Defensive Extraction**: In route handlers processing mixed Pydantic models, raw dictionaries, or null payloads, extract fields defensively via dual-shape introspection (`getattr(obj, 'k', None) if not isinstance(obj, dict) else obj.get('k')`), never assuming LLM or user inputs are pre-typed strings.
+6. **Fail-Closed AST Static Analysis**: Utilizing AST-level inspection to audit error handling in deserialization and extraction helpers—eliminating unconstrained catch blocks (`except Exception:`) that mask internal bugs as client errors.
+7. **Stateful Property Fuzzing**: Applying bounded Hypothesis strategies to parser and state machine boundaries, synthesizing adversarial inputs to expose edge-case crashes and shrinking them into deterministic regression suites.
+8. **Scope Subordination over Anti-Conflict Isolation**: Strict deliverable fidelity. Anti-conflict heuristics never drop required deliverables (manifest entries, discovery links, documentation) mandated by maintainer contracts; shared index rebases are cleanly resolved rather than truncating scope.
 
 ---
 
@@ -67,7 +69,7 @@ I design and ship code according to strict, formal engineering invariants:
 - **Backend & Web**: FastAPI, Starlette, ASGI Pipeline Architecture, Node.js, Uvicorn, HTTPX
 - **Validation & Schemas**: Pydantic v2 (`@model_validator`, typed discriminated unions), OpenAPI 3.1
 - **API & Auth Protocols**: RESTful APIs, GraphQL, OAuth2 / OIDC Auth Flows, Webhooks, HMAC verification
-- **Third-Party Integrations**: Microsoft 365 Graph API, Notion API, ClickUp API, Zapier Webhooks, USGS FDSN GeoJSON, Model Context Protocol (MCP)
+- **Third-Party Integrations**: Microsoft 365 Graph API, Notion API, ClickUp API, Slack API, Zapier Webhooks, USGS FDSN GeoJSON, Model Context Protocol (MCP)
 
 #### 📊 Observability & Distributed Systems
 - **Telemetry**: OpenTelemetry (OTel Python SDK, trace providers, custom span processors, span exporters)
@@ -92,14 +94,19 @@ I design and ship code according to strict, formal engineering invariants:
 ### 🏆 Open-Source Track Record & Highlights
 
 - **[`BasedHardware/omi`](https://github.com/BasedHardware/omi)**:
-  - **Enterprise Service Hardening (15 Merged PRs)**: Hardened critical enterprise integrations including Microsoft 365 (#14250), Zapier (#14256), Notion OAuth (#14258), Notifications (#14260), and ClickUp (#14268) with callable ASGI exception handlers, typed request/response models, and zero-network test suites.
-  - **USGS Earthquake Integration (#14262)**: Remediated endpoint deserialization, implemented defensive duck-typing extraction, and achieved 100% preflight pass rates across all 15 native repository checks.
-  - **Global Developer Onboarding**: Authored idiomatic developer quickstarts across 20+ language ecosystems.
+  - **Enterprise Service Hardening (5 Merged PRs)**: Hardened critical enterprise integrations including Microsoft 365 ([#14250](https://github.com/BasedHardware/omi/pull/14250)), Zapier ([#14256](https://github.com/BasedHardware/omi/pull/14256)), Notion OAuth ([#14258](https://github.com/BasedHardware/omi/pull/14258)), Notifications ([#14260](https://github.com/BasedHardware/omi/pull/14260)), and ClickUp ([#14268](https://github.com/BasedHardware/omi/pull/14268)) with callable ASGI exception handlers, typed request/response models, cooldown memory leak fixes, and zero-network test suites.
+  - **Internationalization & Global Developer Onboarding (10 Merged PRs)**: Authored comprehensive, idiomatic developer quickstarts and CLI onboarding guides across 10 language ecosystems: Bulgarian ([#13717](https://github.com/BasedHardware/omi/pull/13717)), Estonian ([#13729](https://github.com/BasedHardware/omi/pull/13729)), Irish ([#13740](https://github.com/BasedHardware/omi/pull/13740)), Basque ([#13742](https://github.com/BasedHardware/omi/pull/13742)), Galician ([#13752](https://github.com/BasedHardware/omi/pull/13752)), Maltese ([#13754](https://github.com/BasedHardware/omi/pull/13754)), Welsh ([#13756](https://github.com/BasedHardware/omi/pull/13756)), Mongolian ([#13773](https://github.com/BasedHardware/omi/pull/13773)), Belarusian ([#14236](https://github.com/BasedHardware/omi/pull/14236)), and Tajik ([#14238](https://github.com/BasedHardware/omi/pull/14238)).
+  - **Slack Chat Tool Protocol Hardening ([#14693](https://github.com/BasedHardware/omi/pull/14693))**: Remediated platform link/mention syntax parsing (`<#ID|name>`, `<@USER>`), direct ID preservation, and primitive type validation guards preventing unhandled 500 crashes on untyped LLM inputs.
+  - **GitHub App Chat Tool Security ([#15012](https://github.com/BasedHardware/omi/pull/15012) & [#13912](https://github.com/BasedHardware/omi/pull/13912))**: Implemented shared-secret authentication enforcement across chat-tool endpoints, robust issue input coercion, and graceful 400 error mapping.
+  - **Microsoft 365 Setup Page Encoding Regression Suite ([#15025](https://github.com/BasedHardware/omi/pull/15025))**: Added hermetic pytest coverage for HTML setup page query-parameter encoding and OAuth callback error escaping.
+  - **USGS Earthquake Integration ([#14262](https://github.com/BasedHardware/omi/pull/14262))**: Remediated endpoint deserialization, implemented defensive duck-typing extraction, and achieved 100% preflight pass rates across all 15 native repository checks.
+  - **CLI Configuration Validation & Resilient Retry ([#13781](https://github.com/BasedHardware/omi/pull/13781))**: Added profile field type validation on config load with exponential retry backoff.
 - **[`BerriAI/litellm`](https://github.com/BerriAI/litellm)**:
-  - **Pre-Persistence Router Hardening (PR #41737)**: Engineered pre-persistence validation guards preventing unroutable models and pricing-only deployments (`typesafe/*`) from writing invalid configuration to Postgres, preventing proxy restart crashes. Backed by 36 hermetic unit tests with full merge-base lint parity.
+  - **Pre-Persistence Router Hardening ([#41737](https://github.com/BerriAI/litellm/pull/41737))**: Engineered pre-persistence validation guards preventing unroutable models and pricing-only deployments (`typesafe/*`) from writing invalid configuration to Postgres, preventing proxy restart crashes. Backed by 36 hermetic unit tests with full merge-base lint parity.
+  - **TypeSafe Router & API Key Validation ([#41741](https://github.com/BerriAI/litellm/pull/41741))**: Enforced explicit TypeSafe credential validation on Jev configurations with mapped HTTP 400 error diagnostics.
 - **[`kyegomez/swarms`](https://github.com/kyegomez/swarms) & [`The-Swarm-Corporation/swarms-framework-docs`](https://github.com/The-Swarm-Corporation/swarms-framework-docs)**:
-  - **Distributed Observability (15 Swarms Core PRs)**: Landed OpenTelemetry distributed tracing across 15+ multi-agent swarm topologies (`AdvisorSwarm`, `SwarmRearrange`, `AuctionSwarm`, `OneToOne`, `OneToThree`, `Broadcast`, `AutoAgentBuilder`, `HybridClusterSwarm`, `HierarchicalStructuredComm`, `AgentRouter`, `OneOnOneDebate`), and fixed multi-turn debate transcript continuity.
-  - **Production Documentation (6 Docs PRs)**: Authored comprehensive guides covering structured outputs, custom tool management, and deferred MCP turn budget orchestration.
+  - **Distributed Observability Architecture**: Engineered OpenTelemetry distributed tracing across 15+ multi-agent swarm topologies (`AdvisorSwarm`, `SwarmRearrange`, `AuctionSwarm`, `OneToOne`, `OneToThree`, `Broadcast`, `AutoAgentBuilder`, `HybridClusterSwarm`, `HierarchicalStructuredComm`, `AgentRouter`, `OneOnOneDebate`), and resolved multi-turn debate transcript continuity.
+  - **Production Documentation**: Authored comprehensive guides covering structured outputs, custom tool management, and deferred MCP turn budget orchestration.
 
 ---
 
