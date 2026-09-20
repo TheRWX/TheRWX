@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/TheRWX/TheRWX/main/assets/sega_genesis_banner.jpg" alt="TheRWX - 16-Bit Systems Architecture & Blast Processing" width="100%" />
+  <img src="https://raw.githubusercontent.com/TheRWX/TheRWX/main/assets/rwx_master_system_banner.jpg" alt="RWX - Master System Architecture" width="100%" />
 
   # 🕹️ REED WILCOX (`@TheRWX`) 🎮
   ### **16-BIT HIGH DEFINITION SYSTEMS ARCHITECTURE • BLAST PROCESSING • DISTRIBUTED OBSERVABILITY**
@@ -10,7 +10,7 @@
   </p>
 
   [![Sega Genesis](https://img.shields.io/badge/Console-Sega%20Genesis%2016--Bit-000000?style=for-the-badge&logo=sega&logoColor=white)](https://en.wikipedia.org/wiki/Sega_Genesis)
-  [![Blast Processing](https://img.shields.io/badge/Architecture-Blast%20Processing-0059b3?style=for-the-badge&logo=fastapi&logoColor=white)](#-engineering-cheat-codes-invariants)
+  [![Blast Processing](https://img.shields.io/badge/Architecture-Blast%20Processing-0059b3?style=for-the-badge&logo=fastapi&logoColor=white)](#-engineering-cheat-codes-core-principles)
   [![Python](https://img.shields.io/badge/Runtime-Python%203.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
   [![Linux](https://img.shields.io/badge/OS-Linux%20%2F%20POSIX-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org)
   [![Observability](https://img.shields.io/badge/Telemetry-OpenTelemetry-F5A800?style=for-the-badge&logo=opentelemetry&logoColor=white)](https://opentelemetry.io)
@@ -41,8 +41,8 @@
 
 I'm an independent systems engineer, builder, and open-source contributor based in the US Mountain West. At heart, I'm a hands-on developer who loves digging into complex codebases, untangling tricky architectural issues, and shipping reliable, battle-hardened code that just works.
 
-- **🎮 16-Bit Roots & The Sega Genesis Mindset**:
-  Massive passion for retro hardware and 16-bit systems engineering—especially the **Sega Genesis** (Mega Drive). Pushing raw silicon to its absolute limit under unforgiving memory and clock constraints (the Motorola 68000 CPU, Z80 coprocessor, and iconic Yamaha YM2612 6-channel FM synthesis chip) was the ultimate masterclass in low-level craftsmanship. That exact mindset—extracting maximum throughput, deterministic execution, and architectural elegance with zero wasted cycles—directly drives how I build modern systems today.
+- **🎮 Retro Console Heritage & Hardware Mindset**:
+  Massive passion for classic hardware and systems engineering—from the 8-bit Master System grid to the 16-bit Genesis (Mega Drive). Pushing raw silicon to its absolute limit under unforgiving memory and clock constraints (Z80 coprocessors, the Motorola 68000 CPU, and iconic Yamaha FM synthesis) was the ultimate masterclass in low-level craftsmanship. That exact mindset—extracting maximum throughput, deterministic execution, and architectural elegance with zero wasted cycles—directly drives how I build modern systems today.
 - **⚡ "Blast Processing" Without the Gimmicks**:
   Zero hype, zero unnecessary complexity. I believe in **minimal diffs**, **hermetic test reproduction**, and strict contract fidelity. If a defect exists, reproduce it in deterministic isolation first. If a system is running in production, make it observable, predictable, and resilient.
 - **🐺 The Lone Wolf in Search of High-Trust Co-Op**:
