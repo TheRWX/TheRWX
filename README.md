@@ -61,7 +61,7 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 | 🔮 **Telemetry Relic** | **OpenTelemetry (OTel SDK)** | Distributed context propagation, async execution graph tracing, latency attribution |
 | ⚡ **Input Controller** | **FastAPI**, **Starlette ASGI**, **HTTPX** | Resilient web endpoints, connection pooling, typed route schemas, streaming handlers |
 | 📜 **Schema Shield** | **Pydantic v2 Models** | Discriminated unions, `@model_validator` guards, zero-network schema validation |
-| 🧪 **Alchemy Lab** | **Hermetic Pytest** & **Hypothesis Fuzzing** | Deterministic dual-tier testing (`python3 -S` + virtualenv), stateful property mutation |
+| 🧪 **Alchemy Lab** | **Hermetic Pytest** & **Hypothesis Fuzzing** | Deterministic regression suites, property-based edge-case discovery, mock isolation |
 | 🔌 **Expansion Port** | **Model Context Protocol (MCP)** & **APIs** | Graph APIs, Slack, GitHub, ClickUp, Notion, OAuth2/OIDC, HMAC webhooks |
 | 🏅 **Guild Seal** | **Contributor License Agreement (CLA)** | 100% CLA Assistant verified across all upstream repositories (Apache 2.0 / MIT) |
 
@@ -104,29 +104,27 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 
 ---
 
-### 🕹️ ENGINEERING CHEAT CODES (INVARIANTS)
+### 🕹️ ENGINEERING CHEAT CODES (CORE PRINCIPLES)
 *Input sequence: `↑ ↑ ↓ ↓ ← → ← → B A [START]`*
 
-Like coding directly for the Motorola 68000, reliable software requires strict architectural invariants:
+Like coding directly for the Motorola 68000, reliable software requires uncompromising craftsmanship and discipline:
 
-1. 🎮 **`[CODE 01]` Validate-Before-Write Ordering**:
-   Database persistence operations in asynchronous services and proxies must strictly execute *after* all semantic, provider, and schema validations succeed—preventing orphaned records and persistent database corruption on downstream failure.
-2. 🔑 **`[CODE 02]` Authorize-Before-Secret-Resolution**:
-   Pydantic request models and early route parsers validate structural schemas only. Resolving server-level credentials or environment secrets must never occur before route authentication and authorization are verified, preventing timing oracles and unmetered I/O.
-3. ⚡ **`[CODE 03]` Callable ASGI Exception Handlers**:
-   Exception handlers in FastAPI/Starlette must return a concrete callable `Response` / `JSONResponse`, never a bare Pydantic model (which triggers runtime `TypeError: object is not callable` during ASGI middleware dispatch).
-4. 🔬 **`[CODE 04]` Dual-Tier Hermetic Testing**:
-   Every service and integration is verified across two distinct execution tiers:
-   - *Tier 1 (Pure Stdlib)*: Executed under standard Python (`python3 -S`) with controlled doubles to guarantee zero implicit dependency leaks in minimal runtimes.
-   - *Tier 2 (Full Dependency Runtime)*: Executed under pinned virtual environments via `uv` (`uv run --locked pytest`) to prove real framework lifecycles, Pydantic v1/v2 schema validators, and ASGI dispatchers run without method collision.
-5. 🦆 **`[CODE 05]` Dual-Shape Duck-Typing Defensive Extraction**:
-   In route handlers processing mixed Pydantic models, raw dictionaries, or null payloads, extract fields defensively via dual-shape introspection (`getattr(obj, 'k', None) if not isinstance(obj, dict) else obj.get('k')`), never assuming LLM or user inputs are pre-typed strings.
-6. 🚫 **`[CODE 06]` Fail-Closed AST Static Analysis**:
-   Utilizing AST-level inspection to audit error handling in deserialization and extraction helpers—eliminating unconstrained catch blocks (`except Exception:`) that mask internal bugs as client errors.
-7. 🎲 **`[CODE 07]` Stateful Property Fuzzing**:
-   Applying bounded Hypothesis strategies to parser and state machine boundaries, synthesizing adversarial inputs to expose edge-case crashes and shrinking them into deterministic regression suites.
-8. 🎯 **`[CODE 08]` Scope Subordination over Anti-Conflict Isolation**:
-   Strict deliverable fidelity. Anti-conflict heuristics never drop required deliverables (manifest entries, discovery links, documentation) mandated by maintainer contracts; shared index rebases are cleanly resolved rather than truncating scope.
+1. 🎮 **`[CODE 01]` Zero Wasted Cycles**:
+   Every line of code must serve a concrete purpose. Eliminate speculative abstractions, dead wrappers, and unnecessary dependencies.
+2. 🛡️ **`[CODE 02]` Validate Before You Commit**:
+   Persistence and downstream mutations must only occur after complete schema and semantic validation passes, guaranteeing zero orphaned database records.
+3. 🔬 **`[CODE 03]` Deterministic Test Isolation**:
+   Every fix begins with a deterministic reproduction. Tests must run without flakiness, external network dependence, or shared-state leakage.
+4. ⚡ **`[CODE 04]` Minimal Blast Radius**:
+   Surgically patch the root cause without collateral churn or unsolicited refactoring, ensuring upstream PRs merge cleanly and safely.
+5. 🔑 **`[CODE 05]` Least-Privilege & Auth Boundary Defense**:
+   Validate schemas and enforce authorization before touching credentials, environment secrets, or expensive external services.
+6. 📊 **`[CODE 06]` Built-In Observability**:
+   Systems should be transparent by design—structured logging, contextual telemetry, and distributed tracing at critical execution boundaries.
+7. 🎲 **`[CODE 07]` Property-Based Boundary Verification**:
+   Complement unit tests with generative property fuzzing to discover and patch unexpected edge cases before users do.
+8. 🤝 **`[CODE 08]` Contract & Deliverable Fidelity**:
+   Deliver exactly what maintainers and clients specify—complete with rigorous documentation, robust test coverage, and clean upstream compatibility.
 
 ---
 
