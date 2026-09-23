@@ -29,8 +29,8 @@
 ╔═══════════════════════════════════════════════════════════════════════════════════════════╗
 ║  PLAYER 1: Reed Wilcox (@TheRWX)          ZONE: US Mountain West (UTC-6)                  ║
 ║  CLASS: Senior Systems & Telemetry Eng    RANK: Open-Source Contributor                   ║
-║  CURRENT SCORE: 15 Merged Production PRs  HP: [████████████████] 100% Hermetic Pass Rate  ║
-║  MAIN CPU: Motorola 68000 @ 7.61 MHz      SOUND CHIP: Yamaha YM2612 (6 FM Channels)      ║
+║  CURRENT SCORE: 19 Merged Production PRs  HP: [████████████████] 100% Hermetic Pass Rate  ║
+║  MAINTAINER APPROVED: 38 Solves Delivered SOUND CHIP: Yamaha YM2612 (6 FM Channels)      ║
 ║  CO-OP STATUS: Open for High-Impact Bounties, Bug Remediation & Infrastructure Contracts   ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════╝
 ```
@@ -69,22 +69,26 @@ I'm an independent systems engineer, builder, and open-source contributor based 
 
 ### 🗺️ STAGE SELECT: OPEN-SOURCE CAMPAIGN RECORD
 
-#### 🏰 ZONE 1: [`BasedHardware/omi`](https://github.com/BasedHardware/omi) — `[STAGE CLEARED: 15 MERGED BOSSES]`
+#### 🏰 ZONE 1: [`BasedHardware/omi`](https://github.com/BasedHardware/omi) — `[STAGE CLEARED: 19 MERGED IN PRODUCTION • 38 APPROVED MAINTAINER SOLVES]`
 *Hardening production wearable AI companion runtimes and expanding global developer access:*
-- 🛡️ **Enterprise Integration Hardening (5 Merged PRs)**:
+- 🛡️ **Enterprise Integration Hardening (8 Merged PRs)**:
+  - **Slack Chat Tool Protocol Hardening** ([#14693](https://github.com/BasedHardware/omi/pull/14693)): Remediated platform link/mention syntax parsing (`<#ID|name>`, `<@USER>`), direct ID preservation, and primitive type validation guards preventing unhandled 500 crashes on untyped LLM inputs.
+  - **GitHub App Chat Tool Authentication** ([#15012](https://github.com/BasedHardware/omi/pull/15012)): Shared-secret auth enforcement across chat-tool endpoints, robust issue input coercion, and graceful 400 error mapping.
+  - **GitHub App Exception Mapping** ([#13912](https://github.com/BasedHardware/omi/pull/13912)): Remediated unhandled backend exception propagation to clients with sanitized error diagnostics.
   - **Microsoft 365** ([#14250](https://github.com/BasedHardware/omi/pull/14250)): Resilient recipient extraction, defensive null guards, and safe `Retry-After` header parsing.
   - **Zapier Webhooks** ([#14256](https://github.com/BasedHardware/omi/pull/14256)): Client request timeouts, defensive null checks, and safe webhook status handling.
   - **Notion OAuth** ([#14258](https://github.com/BasedHardware/omi/pull/14258)): Strict timeouts, database identifier validation, and resilient error handlers.
   - **Push Notifications** ([#14260](https://github.com/BasedHardware/omi/pull/14260)): Credentials retrieval hardening, cooldown memory leak remediation, and malformed segment guards.
   - **ClickUp App** ([#14268](https://github.com/BasedHardware/omi/pull/14268)): Session lifecycle management, error boundary hardening, and safe type coercion.
-- 🌐 **Global Developer Quickstarts (10 Merged PRs)**:
-  - Authored idiomatic CLI onboarding and discovery links across 10 language ecosystems: Bulgarian ([#13717](https://github.com/BasedHardware/omi/pull/13717)), Estonian ([#13729](https://github.com/BasedHardware/omi/pull/13729)), Irish ([#13740](https://github.com/BasedHardware/omi/pull/13740)), Basque ([#13742](https://github.com/BasedHardware/omi/pull/13742)), Galician ([#13752](https://github.com/BasedHardware/omi/pull/13752)), Maltese ([#13754](https://github.com/BasedHardware/omi/pull/13754)), Welsh ([#13756](https://github.com/BasedHardware/omi/pull/13756)), Mongolian ([#13773](https://github.com/BasedHardware/omi/pull/13773)), Belarusian ([#14236](https://github.com/BasedHardware/omi/pull/14236)), and Tajik ([#14238](https://github.com/BasedHardware/omi/pull/14238)).
-- ⚡ **Active Production Submissions**:
-  - **Slack Chat Tool Protocol Hardening** ([#14693](https://github.com/BasedHardware/omi/pull/14693)): Remediated platform link/mention syntax parsing (`<#ID|name>`, `<@USER>`), direct ID preservation, and primitive type validation guards preventing unhandled 500 crashes on untyped LLM inputs.
-  - **GitHub App Chat Tool Authentication** ([#15012](https://github.com/BasedHardware/omi/pull/15012) & [#13912](https://github.com/BasedHardware/omi/pull/13912)): Shared-secret auth enforcement across chat-tool endpoints, robust issue input coercion, and graceful 400 error mapping.
-  - **Microsoft 365 Setup Encoding Regression Suite** ([#15025](https://github.com/BasedHardware/omi/pull/15025)): Hermetic pytest coverage for HTML setup page query-parameter encoding and OAuth callback error escaping.
+- 🌐 **Global Developer Quickstarts (11 Merged PRs)**:
+  - Authored idiomatic CLI onboarding and discovery links across 11 language ecosystems: Bosnian ([#13758](https://github.com/BasedHardware/omi/pull/13758)), Bulgarian ([#13717](https://github.com/BasedHardware/omi/pull/13717)), Estonian ([#13729](https://github.com/BasedHardware/omi/pull/13729)), Irish ([#13740](https://github.com/BasedHardware/omi/pull/13740)), Basque ([#13742](https://github.com/BasedHardware/omi/pull/13742)), Galician ([#13752](https://github.com/BasedHardware/omi/pull/13752)), Maltese ([#13754](https://github.com/BasedHardware/omi/pull/13754)), Welsh ([#13756](https://github.com/BasedHardware/omi/pull/13756)), Mongolian ([#13773](https://github.com/BasedHardware/omi/pull/13773)), Belarusian ([#14236](https://github.com/BasedHardware/omi/pull/14236)), and Tajik ([#14238](https://github.com/BasedHardware/omi/pull/14238)).
+- 🏅 **Approved Campaign Solves (38 Total Maintainer Approvals)**:
+  - Verified and maintainer-approved across upstream sweeps, including Uzbek ([#13771](https://github.com/BasedHardware/omi/pull/13771)), Quechua ([#14687](https://github.com/BasedHardware/omi/pull/14687)), and 17 additional core documentation architectures.
+- ⚡ **Active Production Submissions Under Review**:
+  - **Gmail Retrieval Tools Exception Sanitization & Guarding** ([#17341](https://github.com/BasedHardware/omi/pull/17341)): Remediated bare asserts, guarded `prepare_access` inside `try:`, sanitized error returns to static generic strings, and added 8 hermetic regression unit tests (100% preflight pass rate).
+  - **Apple Health Tools Sanitization & Guarding** ([#17260](https://github.com/BasedHardware/omi/pull/17260)): Sanitized exception reflections across all 5 Apple Health tools (`steps`, `sleep`, `heart_rate`, `workouts`, `summary`), added 9 hermetic unit tests, evaluated cleanly by maintainer bot.
+  - **IQ Rating Exception Sanitization & Error Sink Remediation** ([#17182](https://github.com/BasedHardware/omi/pull/17182)): Closed HTML error sink and `HTTPException` exception leaks in `GET /iq` and `GET /iq/api` (#15564), added 4 hermetic unit tests, evaluated cleanly by maintainer bot.
   - **USGS Earthquake Integration** ([#14262](https://github.com/BasedHardware/omi/pull/14262)): Remediated endpoint deserialization, implemented defensive duck-typing extraction, and achieved 100% preflight pass rates.
-  - **CLI Configuration Validation** ([#13781](https://github.com/BasedHardware/omi/pull/13781)): Added profile field type validation on config load with exponential retry backoff.
 
 #### 🏰 ZONE 2: [`BerriAI/litellm`](https://github.com/BerriAI/litellm) — `[HIGH-THROUGHPUT PROXY FORTRESS]`
 *Hardening core router validation and preventing database corruption on large-scale AI proxy deployments:*
