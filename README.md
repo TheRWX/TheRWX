@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img alt="RWX — open-source contributor: Python, mobile, embedded" src="assets/header-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/header-light.svg">
+  <img alt="RWX — open-source contributor: Python, mobile, embedded" src="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/header-dark.svg" width="100%">
 </picture>
 
 <kbd>Python</kbd> <kbd>FastAPI</kbd> <kbd>Flutter</kbd> <kbd>Kotlin</kbd> <kbd>C · Zephyr</kbd> <kbd>Linux</kbd> <kbd>pytest</kbd>
@@ -18,9 +18,9 @@ for maintainers to review.
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg">
-  <img alt="Upstream activity: merged and open pull requests by project" src="assets/activity-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/activity-light.svg">
+  <img alt="Upstream activity: merged and open pull requests by project" src="https://raw.githubusercontent.com/TheRWX/TheRWX/redesign/assets/activity-dark.svg" width="100%">
 </picture>
 
 <sub>Refreshed daily from the GitHub API by <a href=".github/workflows/activity.yml">a workflow in this repo</a> ·
