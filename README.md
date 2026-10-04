@@ -83,7 +83,7 @@ for maintainers to review.
 
 ## Toolbox
 
-| | |
+| Area | Tools |
 |:--|:--|
 | **Backend** | Python · FastAPI · Pydantic · SQLite · REST & webhooks · OAuth |
 | **Mobile & embedded** | Flutter / Dart · Kotlin (Android) · C on Zephyr (nRF) · BLE |
