@@ -1,0 +1,43 @@
+name: Refresh activity card
+
+on:
+  schedule:
+    - cron: "17 13 * * *"  # daily, 13:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/build_activity.py
+      - .github/workflows/activity.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: activity-card
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # commit the regenerated card
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+
+      - name: Build card from the GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/build_activity.py
+
+      - name: Commit if the card changed
+        run: |
+          git add assets/activity-dark.svg assets/activity-light.svg assets/activity.json
+          if git diff --cached --quiet; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(activity): refresh card [skip ci]"
+          git push

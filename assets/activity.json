@@ -1,0 +1,22 @@
+{
+  "author": "TheRWX",
+  "repos": [
+    {
+      "repo": "BasedHardware/omi",
+      "merged": 20,
+      "open": 8
+    },
+    {
+      "repo": "BerriAI/litellm",
+      "merged": 0,
+      "open": 2
+    }
+  ],
+  "merged_by_kind": {
+    "docs": 11,
+    "fixes": 9,
+    "features": 0,
+    "other": 0
+  },
+  "updated": "2026-10-04"
+}
