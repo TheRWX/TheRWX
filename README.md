@@ -81,6 +81,13 @@ for maintainers to review.
 
 </details>
 
+## Projects I maintain
+
+| Project | What it is |
+|:--|:--|
+| [**Vibeuroba**](https://github.com/TheRWX/Vibeuroba) | Free and open source Android image board browser, independently maintained |
+| [**bounty-radar**](https://github.com/TheRWX/bounty-radar) | Finds open-source GitHub bounties that nobody is working on yet |
+
 ## Toolbox
 
 | Area | Tools |
