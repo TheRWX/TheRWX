@@ -4,7 +4,7 @@
     {
       "repo": "BasedHardware/omi",
       "merged": 20,
-      "open": 8
+      "open": 6
     },
     {
       "repo": "BerriAI/litellm",
@@ -18,5 +18,5 @@
     "features": 0,
     "other": 0
   },
-  "updated": "2026-10-04"
+  "updated": "2026-10-07"
 }

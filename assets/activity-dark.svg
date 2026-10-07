@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="t d">
   <title id="t">Open-source activity</title>
-  <desc id="d">20 merged and 10 open pull requests by @TheRWX across 2 upstream projects (11 docs · 9 fixes). Last change 2026-10-04.</desc>
+  <desc id="d">20 merged and 8 open pull requests by @TheRWX across 2 upstream projects (11 docs · 9 fixes). Last change 2026-10-07.</desc>
   <style>
     .num { font: 800 46px "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
     .cap { font: 600 13px ui-monospace, "SFMono-Regular", "DejaVu Sans Mono", Menlo, Consolas, monospace; letter-spacing: 2px; }
@@ -24,7 +24,7 @@
     <text class="cap" x="40" y="152" fill="#8aa4b3">MERGED PRs</text>
   </g>
   <g class="rise" style="animation-delay:.25s">
-    <text class="num" x="220" y="128" fill="#d4a017">10</text>
+    <text class="num" x="220" y="128" fill="#d4a017">8</text>
     <text class="cap" x="220" y="152" fill="#8aa4b3">OPEN PRs</text>
   </g>
   <g class="rise" style="animation-delay:.4s">
@@ -35,18 +35,18 @@
   <line x1="580" y1="40" x2="580" y2="200" stroke="#22303f" stroke-width="2"/>
   
     <text class="label" x="610" y="70" fill="#e8edf2">BasedHardware/omi</text>
-    <text class="label" x="1150" y="70" text-anchor="end" fill="#8aa4b3">20 merged · 8 open</text>
+    <text class="label" x="1150" y="70" text-anchor="end" fill="#8aa4b3">20 merged · 6 open</text>
     <g class="grow" style="animation-delay:0.30s">
       <rect x="610" y="80" width="540" height="12" rx="6" fill="#22303f"/>
-      <rect x="610" y="80" width="314" height="12" rx="6" fill="#2ea043"/>
-      <rect x="924" y="80" width="126" height="12" rx="6" fill="#d4a017" opacity="0.85"/>
+      <rect x="610" y="80" width="338" height="12" rx="6" fill="#2ea043"/>
+      <rect x="948" y="80" width="102" height="12" rx="6" fill="#d4a017" opacity="0.85"/>
     </g>
     <text class="label" x="610" y="132" fill="#e8edf2">BerriAI/litellm</text>
     <text class="label" x="1150" y="132" text-anchor="end" fill="#8aa4b3">0 merged · 2 open</text>
     <g class="grow" style="animation-delay:0.55s">
       <rect x="610" y="142" width="540" height="12" rx="6" fill="#22303f"/>
       <rect x="610" y="142" width="0" height="12" rx="6" fill="#2ea043"/>
-      <rect x="610" y="142" width="31" height="12" rx="6" fill="#d4a017" opacity="0.85"/>
+      <rect x="610" y="142" width="34" height="12" rx="6" fill="#d4a017" opacity="0.85"/>
     </g>
-  <text class="cap" x="1150" y="212" text-anchor="end" fill="#8aa4b3">GITHUB API · LAST CHANGE 2026-10-04</text>
+  <text class="cap" x="1150" y="212" text-anchor="end" fill="#8aa4b3">GITHUB API · LAST CHANGE 2026-10-07</text>
 </svg>
